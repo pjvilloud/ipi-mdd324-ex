@@ -8,8 +8,7 @@ $( document ).ready(function() {
     		data: {bitcoinAmount: 5,currencyList:"USD,EUR"}, 
     		headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest'
+                'Accept': 'application/json'
     		},
     		success: function(data, textStatus, xhr) {
 		    	/*optional stuff to do after success */
