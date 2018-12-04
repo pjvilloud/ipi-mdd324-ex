@@ -7,7 +7,7 @@ $( document ).ready(function() {
             contentType: 'application/json',
             crossDomain: true,
             dataType: 'json',
-    		url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getbitcoinrate', 
+    		url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getBitcoinRate', 
     		data: {
                 bitcoinAmount: 5,
                 currencyList:"USD,EUR"
