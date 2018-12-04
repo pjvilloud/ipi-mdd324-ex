@@ -9,8 +9,8 @@ $( document ).ready(function() {
             dataType: 'json',
     		url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getBitcoinRate', 
     		data: {
-                bitcoinAmount: 5,
-                currencyList:"USD,EUR"
+                "bitcoinAmount": 5,
+                "currencyList":"USD,EUR"
             }, 
     		headers: {
                 'Content-Type': 'application/json',
