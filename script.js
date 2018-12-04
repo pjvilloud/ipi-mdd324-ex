@@ -20,10 +20,10 @@ $( document ).ready(function() {
     		success: function(data, textStatus, xhr) {
     	    	/*optional stuff to do after success */
                 console.log(JSON.stringify(data));
-                var str = "<h2>" + data.bitcoinAmount + " correspond à </h2><ul class='list-group'>";
+                var str = "<h2>" + data.bitcoinAmount + " <i class='fa fa-btc'></i> correspond à </h2><ul class='list-group'>";
 
                 $.each( data.currenciesEquivalent, function( cur, amount ) {
-                  str += "<li class='list-group-item'>"+ amount + " : " + cur +"</li>";
+                  str += "<li class='list-group-item'>"+ amount + " <i class='fa fa-" + cur.toLowerCase() +"'></i></li>";
                 });
 
                 str += "</ul>";
