@@ -85,10 +85,26 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Taux de change du Bitcoin</h5>
+           <form>
+            <div class="row">
+              <div class="col-sm-5">
+                <input type="number" value="1" class="form-control" id="btcAmount"> 
+              </div>
+              <div class="col-sm-2 pl-0 pr-0"><i class="fa fa-btc fa-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i></div>
+              <div class="col-sm-5">
+                <select multiple class="form-control" id="currenciesSelect">
+                <option selected value="EUR">€ (EUR)</option>
+                <option value="USD">$ (USD)</option>
+                <option value="GBP">£ (GBP)</option>
+                <option value="JPY">¥ (JPY)</option>
+                <option value="AUD">$ (AUD)</option>
+              </select>
+              </div>
+            </div>
+          </form>
           <div id="bitcoin">
-
           </div>
-          <button class="btn btn-primary">Mettre à jour</button>
+          <button id="getBitcoinRate" class="btn btn-primary">Mettre à jour</button>
         </div>
       </div>
     </div>
