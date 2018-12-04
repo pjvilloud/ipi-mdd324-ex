@@ -19,7 +19,17 @@ $( document ).ready(function() {
     		},
     		success: function(data, textStatus, xhr) {
     	    	/*optional stuff to do after success */
-    	    	$("#bitcoin").html(data);
+                console.log(JSON.stringify(data));
+                data.currenciesEquivale
+                var str = "<h2>" + data.bitcoinAmount + " correspond à </h2><ul class='list-group'>";
+
+                $.each( obj, function( cur, amount ) {
+                  str += "<li class='list-group-item'>"+ amount + " : " + cur +"</li>";
+                });
+
+                str += "</ul>";
+
+    	    	$("#bitcoin").html(str);
     	    }
 		}
 	);
