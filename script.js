@@ -5,11 +5,11 @@ $( document ).ready(function() {
             "bitcoinAmount": 5,
             "currencyList":"USD,EUR"
         },
-        success: function(data, textStatus, xhr) {
+        function(data, textStatus, xhr) {
             /*optional stuff to do after success */
             $("#bitcoin").html(data);
         },
-        dataType: 'json'
+        'json'
      );
     $.ajax(
     	{
