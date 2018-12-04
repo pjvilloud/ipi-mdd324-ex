@@ -6,6 +6,7 @@ $( document ).ready(function() {
     		url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getbitcoinrate', 
     		data: {bitcoinAmount: 5,currencyList:"USD,EUR"}, 
     		headers: {
+    			'Access-Control-Allow-Origin': "pjvilloud.github.io/ipi-mdd324-ex",
                 'Accept': 'application/json',
                 'X-Requested-With': 'XMLHttpRequest'
     		},
