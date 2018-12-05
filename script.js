@@ -16,6 +16,7 @@ $( document ).ready(function() {
     });*/
     getWeather();
     $("#getWeather").click(function(event) {
+        event.preventDefault();
         getWeather();
     });
     //getEphemeride();
