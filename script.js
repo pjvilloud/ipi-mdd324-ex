@@ -2,7 +2,7 @@ $( document ).ready(function() {
     moment.locale("fr");
 
     //Bitcoin
-    /*getBitcoinRate();
+    getBitcoinRate();
     $("#getBitcoinRate").click(function(event) {
         getBitcoinRate();
     });
@@ -13,14 +13,13 @@ $( document ).ready(function() {
     getQuote();
     $("#getQuote").click(function(event) {
         getQuote();
-    });*/
+    });
     getWeather();
     $("#getWeather").click(function(event) {
         event.preventDefault();
         getWeather();
     });
-    //getEphemeride();
-    getHoroscope();
+    getEphemeride();
     $("#getHoroscope").click(function(event) {
         event.preventDefault();
         getHoroscope();
