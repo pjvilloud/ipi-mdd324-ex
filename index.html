@@ -54,6 +54,49 @@
     <div class="col-sm-6 mb-2 mt-2">
       <div class="card">
         <div class="card-header">
+          Taux de change du Bitcoin
+        </div>
+        <div class="card-body">
+           <form>
+            <div class="row">
+              <div class="col-sm-5">
+                <input type="number" value="1" class="form-control" id="btcAmount"> 
+              </div>
+              <div class="col-sm-2 pl-0 pr-0"><i class="fa fa-btc fa-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i></div>
+              <div class="col-sm-5">
+                <select multiple class="form-control" id="currenciesSelect">
+                <option selected value="EUR">€ (EUR)</option>
+                <option value="USD">$ (USD)</option>
+                <option value="GBP">£ (GBP)</option>
+                <option value="JPY">¥ (JPY)</option>
+                <option value="AUD">$ (AUD)</option>
+              </select>
+              </div>
+            </div>
+          </form>
+          <div id="bitcoin">
+          </div>
+          <button id="getBitcoinRate" class="btn btn-primary mt-2">Mettre à jour</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 mb-2 mt-2">
+      <div class="card">
+        <div class="card-header">
+          Citation du jour
+        </div>
+        <div class="card-body">
+          <div id="citations">
+
+          </div>
+          <button class="btn btn-primary" id="getQuote">Autre citation</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 mb-2 mt-2">
+      <div class="card">
+        <div class="card-header">
           Actualités
         </div>
         <div class="card-body">
@@ -91,48 +134,6 @@
           <div id="horoscope">
 
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 mb-2 mt-2">
-      <div class="card">
-        <div class="card-header">
-          Taux de change du Bitcoin
-        </div>
-        <div class="card-body">
-           <form>
-            <div class="row">
-              <div class="col-sm-5">
-                <input type="number" value="1" class="form-control" id="btcAmount"> 
-              </div>
-              <div class="col-sm-2 pl-0 pr-0"><i class="fa fa-btc fa-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i></div>
-              <div class="col-sm-5">
-                <select multiple class="form-control" id="currenciesSelect">
-                <option selected value="EUR">€ (EUR)</option>
-                <option value="USD">$ (USD)</option>
-                <option value="GBP">£ (GBP)</option>
-                <option value="JPY">¥ (JPY)</option>
-                <option value="AUD">$ (AUD)</option>
-              </select>
-              </div>
-            </div>
-          </form>
-          <div id="bitcoin">
-          </div>
-          <button id="getBitcoinRate" class="btn btn-primary mt-2">Mettre à jour</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 mb-2 mt-2">
-      <div class="card">
-        <div class="card-header">
-          Citation du jour
-        </div>
-        <div class="card-body">
-          <div id="citations">
-
-          </div>
-          <button class="btn btn-primary" id="getQuote">Autre citation</button>
         </div>
       </div>
     </div>
