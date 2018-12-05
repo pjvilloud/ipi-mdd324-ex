@@ -95,7 +95,7 @@ function getEphemeride(){
     }).done(function(data) {
         console.log(JSON.stringify(data));
         var str = '<div class="alert alert-primary" role="alert"><h3>'+data.dateJour+'</h3></div>';
-        str += '<div class="progress"><div class="progress-bar" role="progressbar" style="width: '+(data.jourAnnee/366)+'%;" aria-valuenow="'+data.jourAnnee+'" aria-valuemin="1" aria-valuemax="365">Jour '+data.jourAnnee+'</div></div>';
+        str += '<div class="progress"><div class="progress-bar" role="progressbar" style="width: '+Math.round(data.jourAnnee*100/366))+'%;" aria-valuenow="'+data.jourAnnee+'" aria-valuemin="1" aria-valuemax="365">Jour '+data.jourAnnee+'</div></div>';
         str += "<h4><em>"+data.feteDuJour+"</em></h4>";
         str += "<h4>Semaine <span class='badge badge-primary'>"+data.numSemaine+"</span></h4>";
         str += "<h4>"+data.joursRestants+" jour(s) avant la fin de l'année !</h4>";
