@@ -46,19 +46,22 @@ function getBitcoinRate(){
 }
 
 function getNews(){
-    $.get('https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getNews', 
-        function(data, textStatus, xhr) {
-            /*optional stuff to do after success */
-            console.log(JSON.stringify(data));
-            var str = "<h2>Actualités du jour</h2><ul class='list-group'>";
+    $.get('https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getNews').done(function(data) {
+        console.log(JSON.stringify(data));
+        var str = "<h2>Actualités du jour</h2><ul class='list-group'>";
 
-            $.each( data, function( key, value ) {
-              str += "<li class='list-group-item'>"+ value.title +"></i></li>";
-            });
+        $.each( data, function( key, value ) {
+          str += "<li class='list-group-item'>"+ value.title +"></i></li>";
+        });
 
-            str += "</ul>";
+        str += "</ul>";
 
-            $("#actualites").html(str);
-        }
-    );
+        $("#actualites").html(str);
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+    alert( "finished" );
+  });
 }
