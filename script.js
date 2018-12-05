@@ -94,11 +94,11 @@ function getEphemeride(){
         }
     }).done(function(data) {
         console.log(JSON.stringify(data));
-        var str = "<h3>"+data.dateJour+"</h3>";
-        str = "<h3>"+data.joursAnnees+"</h3>";
-        str = "<h3>"+data.feteDuJour+"</h3>";
-        str = "<h4>Semaine "+data.numSemaine+"</h4>";
-        str = "<h4>"+data.joursRestants+" avant la fin de l'année !</h4>";
+        var str = '<div class="alert alert-primary" role="alert"><h3>'+data.dateJour+'</h3></div>';
+        str += '<div class="progress"><div class="progress-bar" role="progressbar" style="width: '+366/data.joursAnnees+'%;" aria-valuenow="'+data.joursAnnees+'" aria-valuemin="1" aria-valuemax="365">Jour '+data.joursAnnees+'</div></div>';
+        str += "<h4><em>"+data.feteDuJour+"</em></h4>";
+        str += "<h4>Semaine <span class='badge badge-primary'>"+data.numSemaine+"</span></h4>";
+        str += "<h4>"+data.joursRestants+" jour(s) avant la fin de l'année !</h4>";
 
         $("#ephemeride").html(str);
     })
