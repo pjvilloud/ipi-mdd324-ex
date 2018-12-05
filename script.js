@@ -61,7 +61,7 @@ function getNews(){
         }
     }).done(function(data) {
         console.log(JSON.stringify(data));
-        var str = "<h2>Actualités du jour</h2><div class='list-group'>";
+        var str = "<div class='list-group'>";
 
         $.each( data, function( key, value ) {
           str += '<a href="' + value.link + '" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start"> <div class="d-flex w-100 justify-content-between">';
