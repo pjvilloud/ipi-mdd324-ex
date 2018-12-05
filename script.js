@@ -62,7 +62,7 @@ function getNews(){
         var str = "<h2>Actualités du jour</h2><ul class='list-group'>";
 
         $.each( data, function( key, value ) {
-          str += "<li class='list-group-item'>"+ value.title +"></i></li>";
+          str += "<li class='list-group-item'>"+ value.title +"><span class='badge badge-primary badge-pill'><a href='"+ value.link + "' target='_blank'><i class='fa fa-external-link'></i></a></span></li>";
         });
 
         str += "</ul>";
