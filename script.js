@@ -10,6 +10,10 @@ $( document ).ready(function() {
     $("#getNews").click(function(event) {
         getNews();
     });
+    getQuote();
+    $("#getQuote").click(function(event) {
+        getQuote();
+    });
     getEphemeride();
 });
 
@@ -101,6 +105,32 @@ function getEphemeride(){
         str += "<h4>"+data.joursRestants+" jour(s) avant la fin de l'année !</h4>";
 
         $("#ephemeride").html(str);
+    })
+    .fail(function(err) {
+        console.log(err);
+    });
+}
+
+function getQuote(){
+  $.ajax(
+    {
+        method: "GET",
+        contentType: 'application/json',
+        crossDomain: true,
+        dataType: 'json',
+        url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getQuote', 
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }).done(function(data) {
+        console.log(JSON.stringify(data));
+        var str = '<blockquote class="blockquote">';
+        str += '<p><em>' + data.quote + '</em></p>';
+        str += '<footer>'+data.author+'</footer>';
+        str += '</blockquote>';
+
+        $("#citations").html(str);
     })
     .fail(function(err) {
         console.log(err);
