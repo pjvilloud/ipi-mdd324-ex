@@ -145,7 +145,10 @@ function getQuote(){
 function getWeather(){
     $.ajax(
     {
-        method: "GET",
+        method: "POST",
+        data: JSON.stringify({
+            "city": $("#lieuInput").val(),
+        }), 
         contentType: 'application/json',
         crossDomain: true,
         dataType: 'json',
