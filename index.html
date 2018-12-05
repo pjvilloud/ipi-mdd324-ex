@@ -139,11 +139,11 @@
     </div>
     <div class="col-sm-6 mb-2 mt-2">
       <div class="card">
+        <div class="card-header">
+          Horoscope
+        </div>
         <div class="card-body">
           <h5 class="card-title">Horoscope</h5>
-          <div id="horoscope">
-
-          </div>
           <form>
             <label for="signeSelect">Choisissez votre signe</label>
             <select class="form-control mb-2" id="signeSelect">
@@ -160,8 +160,11 @@
               <option>Verseau</option>
               <option>Poisson</option>
             </select>
-            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+            <button id="getHoroscope" class="btn btn-primary">Mettre à jour</button>
           </form>
+          <div id="horoscope">
+
+          </div>
         </div>
       </div>
     </div>

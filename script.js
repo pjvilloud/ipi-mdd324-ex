@@ -20,6 +20,11 @@ $( document ).ready(function() {
         getWeather();
     });
     //getEphemeride();
+    getHoroscope();
+    $("#getHoroscope").click(function(event) {
+        event.preventDefault();
+        getHoroscope();
+    });
 });
 
 function getBitcoinRate(){
@@ -169,3 +174,27 @@ function getWeather(){
         console.log(err);
     });
 }
+
+function getHoroscope(){
+    $.ajax(
+    {
+        method: "POST",
+        data: JSON.stringify({
+            "signe": $("#signeSelect").val(),
+        }), 
+        contentType: 'application/json',
+        crossDomain: true,
+        dataType: 'json',
+        url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getHoroscope', 
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }).done(function(data) {
+        $("#horoscope").html(data.horoscope);
+    })
+    .fail(function(err) {
+        console.log(err);
+    });
+}
+
