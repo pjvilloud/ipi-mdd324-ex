@@ -114,22 +114,28 @@
         </div>
         <div class="card-body">
           <form>
-            <label for="signeSelect">Choisissez votre signe</label>
-            <select class="form-control mb-2" id="signeSelect">
-              <option>Bélier</option>
-              <option>Taureau</option>
-              <option>Gémeaux</option>
-              <option>Cancer</option>
-              <option>Lion</option>
-              <option>Vierge</option>
-              <option>Balance</option>
-              <option>Scorpion</option>
-              <option>Sagittaire</option>
-              <option>Capricorne</option>
-              <option>Verseau</option>
-              <option>Poisson</option>
-            </select>
-            <button id="getHoroscope" class="btn btn-primary">Mettre à jour</button>
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="signeSelect">Choisissez votre signe</label>
+                <select class="form-control mb-2" id="signeSelect">
+                  <option>Bélier</option>
+                  <option>Taureau</option>
+                  <option>Gémeaux</option>
+                  <option>Cancer</option>
+                  <option>Lion</option>
+                  <option>Vierge</option>
+                  <option>Balance</option>
+                  <option>Scorpion</option>
+                  <option>Sagittaire</option>
+                  <option>Capricorne</option>
+                  <option>Verseau</option>
+                  <option>Poisson</option>
+                </select>
+              </div>
+              <div class="col-sm-6 text-center">
+                <button id="getHoroscope" class="btn btn-primary">Mettre à jour</button>
+              </div>
+            </div>
           </form>
           <div id="horoscope">
 
