@@ -10,8 +10,7 @@ $( document ).ready(function() {
     $("#getNews").click(function(event) {
         getNews();
     });
-
-    
+    getEphemeride();
 });
 
 function getBitcoinRate(){
@@ -75,6 +74,33 @@ function getNews(){
         str += "</div>";
 
         $("#actualites").html(str);
+    })
+    .fail(function(err) {
+        console.log(err);
+    });
+}
+
+function getEphemeride(){
+  $.ajax(
+    {
+        method: "GET",
+        contentType: 'application/json',
+        crossDomain: true,
+        dataType: 'json',
+        url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getEphemeride', 
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }).done(function(data) {
+        console.log(JSON.stringify(data));
+        var str = "<h3>"+data.dateJour+"</h3>";
+        str = "<h3>"+data.joursAnnees+"</h3>";
+        str = "<h3>"+data.feteDuJour+"</h3>";
+        str = "<h4>Semaine "+data.numSemaine+"</h4>";
+        str = "<h4>"+data.joursRestants+" avant la fin de l'année !</h4>";
+
+        $("#ephemeride").html(str);
     })
     .fail(function(err) {
         console.log(err);
