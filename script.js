@@ -2,7 +2,7 @@ $( document ).ready(function() {
     moment.locale("fr");
 
     //Bitcoin
-    getBitcoinRate();
+    /*getBitcoinRate();
     $("#getBitcoinRate").click(function(event) {
         getBitcoinRate();
     });
@@ -13,11 +13,16 @@ $( document ).ready(function() {
     getQuote();
     $("#getQuote").click(function(event) {
         getQuote();
+    });*/
+    getWeather();
+    $("#getWeather").click(function(event) {
+        getWeather();
     });
-    getEphemeride();
+    //getEphemeride();
 });
 
 function getBitcoinRate(){
+
     $.ajax(
         {
             method: "POST",
@@ -135,4 +140,33 @@ function getQuote(){
     .fail(function(err) {
         console.log(err);
     });
+}
+
+function getWeather(){
+    var data = JSON.parse('{"temps":"ciel dégagé","icon":"200", "temp":284.44,"pressure":1018,"humidity":76,"temp_min":284.15,"temp_max":285.15, "sunrise":1543994882,"sunset":1544025275,"name":"Paris"}');
+    var str = '<div class="alert alert-primary" role="alert"><h3>'+data.temps+'&nbsp;<span class="float-right" style="margin-top:-8px"><i class="owf-2x owf owf-'+data.icon+'"></i></h3></div>';
+    str += '<h4 class="text-center">Température : <b>' + data.temp +'°</b></h4>';
+    str += '<h4 class="text-info text-center">Humidité : ' + data.humidite +'%</h4>';
+    str += '<h4 class="text-warning text-center">Soleil : Lever à ' + data.lever +', coucher à ' + data.coucher +'</h4>';
+    $("#previsions").html(str);
+    /*$.ajax(
+    {
+        method: "GET",
+        contentType: 'application/json',
+        crossDomain: true,
+        dataType: 'json',
+        url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getWeather', 
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }).done(function(data) {
+        console.log(JSON.stringify(data));
+        var str = '<i class="owf owf-200"></i>';
+
+        $("#previsions").html(str);
+    })
+    .fail(function(err) {
+        console.log(err);
+    });*/
 }
