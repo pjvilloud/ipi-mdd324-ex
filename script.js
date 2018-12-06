@@ -24,6 +24,10 @@ $( document ).ready(function() {
         event.preventDefault();
         getHoroscope();
     });
+    $("#getCinema").click(function(event) {
+        event.preventDefault();
+        getCinema();
+    });
 });
 
 function getBitcoinRate(){
@@ -191,6 +195,32 @@ function getHoroscope(){
         }
     }).done(function(data) {
         $("#horoscope").html(data.horoscope);
+    })
+    .fail(function(err) {
+        console.log(err);
+    });
+}
+
+
+function getCinema(){
+    $.ajax(
+    {
+        method: "GET",
+        contentType: 'application/json',
+        crossDomain: true,
+        dataType: 'json',
+        url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getCinema', 
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }).done(function(data) {
+        var str = '';
+        $.each(data.films, function(index, val) {
+             /* iterate through array or object */
+             str += '<div class="card"><div class="card-body"><h5 class="card-title">'+val.title+'</h5><p class="card-text">'+val.description+'</p></div></div>'
+        });
+        $("#cinema").html(str);
     })
     .fail(function(err) {
         console.log(err);
