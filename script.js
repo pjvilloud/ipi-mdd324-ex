@@ -216,11 +216,11 @@ function getCinema(){
             'Accept': 'application/json'
         }
     }).done(function(data) {
-        var str = '';
+        var str = '<div class="row">';
         $.each(data.films, function(index, val) {
-             /* iterate through array or object */
-             str += '<div class="card"><div class="card-body"><h5 class="card-title">'+val.titre+'</h5><span class="badge badge-info">'+val.categorie+'</span> <span class="badge badge-primary">'+val.duree+'</span><p class="card-text">'+val.description+'</p></div></div>'
+             str += '<div class="card col-sm-6"><div class="card-body"><h5 class="card-title">'+val.titre+'</h5><span class="badge badge-info">'+val.categorie+'</span> <span class="badge badge-primary">'+val.duree+'</span><p class="card-text">'+val.description+'</p></div></div>'
         });
+        str += "</div";
         $("#cinema").html(str);
     })
     .fail(function(err) {
