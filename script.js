@@ -24,6 +24,7 @@ $( document ).ready(function() {
         event.preventDefault();
         getHoroscope();
     });
+    getCinema();
     $("#getCinema").click(function(event) {
         event.preventDefault();
         getCinema();
