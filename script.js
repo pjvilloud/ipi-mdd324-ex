@@ -219,7 +219,7 @@ function getCinema(){
         var str = '';
         $.each(data.films, function(index, val) {
              /* iterate through array or object */
-             str += '<div class="card"><div class="card-body"><h5 class="card-title">'+val.titre+'</h5><p class="card-text">'+val.description+'</p></div></div>'
+             str += '<div class="card"><div class="card-body"><h5 class="card-title">'+val.titre+'</h5><span class="badge badge-info">'+val.categorie+'</span> <span class="badge badge-primary">'+val.duree+'</span><p class="card-text">'+val.description+'</p></div></div>'
         });
         $("#cinema").html(str);
     })
