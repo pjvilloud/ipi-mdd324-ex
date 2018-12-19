@@ -1,3 +1,19 @@
+/*var bitCoinUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getBitcoinRate';
+var newsUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getNews';
+var ephemerideUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getEphemeride';
+var quoteUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getQuote';
+var weatherUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getWeather';
+var horoscopeUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getHoroscope';
+var cinemaUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getCinema';*/
+
+var bitCoinUrl = '';
+var newsUrl = '';
+var ephemerideUrl = '';
+var quoteUrl = '';
+var weatherUrl = '';
+var horoscopeUrl = '';
+var cinemaUrl = '';
+
 $( document ).ready(function() {
     moment.locale("fr");
 
@@ -39,7 +55,7 @@ function getBitcoinRate(){
             contentType: 'application/json',
             crossDomain: true,
             dataType: 'json',
-            url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getBitcoinRate', 
+            url:bitCoinUrl, 
             data: JSON.stringify({
                 "bitcoinAmount": parseFloat($("#btcAmount").val()),
                 "currencyList":$("#currenciesSelect").val().toString()
@@ -72,7 +88,7 @@ function getNews(){
         contentType: 'application/json',
         crossDomain: true,
         dataType: 'json',
-        url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getNews', 
+        url:newsUrl, 
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -106,7 +122,7 @@ function getEphemeride(){
         contentType: 'application/json',
         crossDomain: true,
         dataType: 'json',
-        url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getEphemeride', 
+        url:ephemerideUrl, 
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -133,7 +149,7 @@ function getQuote(){
         contentType: 'application/json',
         crossDomain: true,
         dataType: 'json',
-        url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getQuote', 
+        url:quoteUrl, 
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -162,7 +178,7 @@ function getWeather(){
         contentType: 'application/json',
         crossDomain: true,
         dataType: 'json',
-        url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getWeather', 
+        url:weatherUrl, 
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -189,7 +205,7 @@ function getHoroscope(){
         contentType: 'application/json',
         crossDomain: true,
         dataType: 'json',
-        url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getHoroscope', 
+        url:horoscopeUrl, 
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -210,7 +226,7 @@ function getCinema(){
         contentType: 'application/json',
         crossDomain: true,
         dataType: 'json',
-        url:'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getCinema', 
+        url:cinemaUrl, 
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
