@@ -1,18 +1,18 @@
-var bitCoinUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getBitcoinRate';
+/*var bitCoinUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getBitcoinRate';
 var newsUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getNews';
 var ephemerideUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getEphemeride';
 var quoteUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getQuote';
 var weatherUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getWeather';
 var horoscopeUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getHoroscope';
 var cinemaUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getCinema';
-
-/*var bitCoinUrl = '';
+*/
+var bitCoinUrl = '';
 var newsUrl = '';
 var ephemerideUrl = '';
 var quoteUrl = '';
-var weatherUrl = '';
+var weatherUrl = 'https://bizquto4m7.execute-api.us-east-1.amazonaws.com/prod/meteo';
 var horoscopeUrl = '';
-var cinemaUrl = '';*/
+var cinemaUrl = '';
 
 $( document ).ready(function() {
     moment.locale("fr");
