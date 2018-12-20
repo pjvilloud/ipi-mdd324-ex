@@ -6,7 +6,7 @@ var weatherUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default
 var horoscopeUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getHoroscope';
 var cinemaUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getCinema';
 */
-var bitCoinUrl = '';
+var bitCoinUrl = 'https://395ghwfs0j.execute-api.us-east-1.amazonaws.com/dev/bitcoin';
 var newsUrl = '';
 var ephemerideUrl = '';
 var quoteUrl = '';
