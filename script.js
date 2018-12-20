@@ -7,7 +7,7 @@ var horoscopeUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/defau
 var cinemaUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getCinema';
 */
 var bitCoinUrl = 'https://395ghwfs0j.execute-api.us-east-1.amazonaws.com/dev/bitcoin';
-var newsUrl = '';
+var newsUrl = 'https://qzaiescaud.execute-api.us-east-1.amazonaws.com/prod/actus';
 var ephemerideUrl = '';
 var quoteUrl = 'https://52au35z76d.execute-api.us-east-1.amazonaws.com/Prod/citations';
 var weatherUrl = 'https://bizquto4m7.execute-api.us-east-1.amazonaws.com/prod/meteo';
