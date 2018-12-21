@@ -11,8 +11,8 @@ var newsUrl = 'https://qzaiescaud.execute-api.us-east-1.amazonaws.com/prod/actus
 var ephemerideUrl = '';
 var quoteUrl = 'https://52au35z76d.execute-api.us-east-1.amazonaws.com/Prod/citations';
 var weatherUrl = 'https://bizquto4m7.execute-api.us-east-1.amazonaws.com/prod/meteo';
-var horoscopeUrl = '';
-var cinemaUrl = '';
+var horoscopeUrl = 'https://f961k09q32.execute-api.eu-west-3.amazonaws.com/default/horoscope';
+var cinemaUrl = 'https://2tk7oifquc.execute-api.us-east-1.amazonaws.com/default/mdd324-cinema';
 
 $( document ).ready(function() {
     moment.locale("fr");
