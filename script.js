@@ -1,17 +1,17 @@
-var bitCoinUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/bitcoin';
-var newsUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/news';
-var ephemerideUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/ephemeris';
-var quoteUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/quote';
-var weatherUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/weather';
-var horoscopeUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/horoscope';
-var cinemaUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/movies';
+var bitCoinUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getBitcoinRate';
+var newsUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getNews';
+var ephemerideUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getEphemeride';
+var quoteUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getQuote';
+var weatherUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getWeather';
+var horoscopeUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getHoroscope';
+var cinemaUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getMovies';
 
 /*var bitCoinUrl = 'https://395ghwfs0j.execute-api.us-east-1.amazonaws.com/dev/bitcoin';
 var newsUrl = 'https://qzaiescaud.execute-api.us-east-1.amazonaws.com/prod/actus';
 var ephemerideUrl = 'https://04bfz6xqq1.execute-api.us-east-1.amazonaws.com/prod/ephemeride';
 var quoteUrl = 'https://52au35z76d.execute-api.us-east-1.amazonaws.com/Prod/citations';
 var weatherUrl = 'https://bizquto4m7.execute-api.us-east-1.amazonaws.com/prod/meteo';
-var horoscopeUrl = 'https://f961k09q32.execute-api.eu-west-3.amazonaws.com/default/horoscope';
+var horoscopeUrl = 'https://f961k09q32.execute-api.eu-west-2.amazonaws.com/default/horoscope';
 var cinemaUrl = 'https://2tk7oifquc.execute-api.us-east-1.amazonaws.com/default/mdd324-cinema';*/
 
 $( document ).ready(function() {
