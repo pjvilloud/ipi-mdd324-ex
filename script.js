@@ -1,11 +1,10 @@
-var bitCoinUrl = 'https://077x5s1rjl.execute-api.us-east-1.amazonaws.com/dev/price';
-var newsUrl = 'https://lvv3x3z22g.execute-api.us-east-1.amazonaws.com/prod/actus';
-var ephemerideUrl = 'https://d4idjllg39.execute-api.us-east-1.amazonaws.com/ephemeride';
-var quoteUrl = 'https://qbqa420s0g.execute-api.us-east-1.amazonaws.com/V1/quote';
-var weatherUrl = 'https://pdcc2fp5d1.execute-api.us-east-1.amazonaws.com/v1';
-var horoscopeUrl = '';
-var cinemaUrl = 'https://skvqpvypy2.execute-api.us-east-1.amazonaws.com/Prod/films';
-var covid19Url = 'https://chzanl1x0h.execute-api.us-east-1.amazonaws.com/CovidTest/covid';
+var bitCoinUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/bitcoin';
+var newsUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/news';
+var ephemerideUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/ephemeris';
+var quoteUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/quote';
+var weatherUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/weather';
+var horoscopeUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/horoscope';
+var cinemaUrl = 'https://pux638iizb.execute-api.eu-west-3.amazonaws.com/Prod/movies';
 
 /*var bitCoinUrl = 'https://395ghwfs0j.execute-api.us-east-1.amazonaws.com/dev/bitcoin';
 var newsUrl = 'https://qzaiescaud.execute-api.us-east-1.amazonaws.com/prod/actus';
@@ -46,11 +45,6 @@ $( document ).ready(function() {
         event.preventDefault();
         getCinema();
     });
-    getCovid();
-    $("#getCovid").click(function(event) {
-        event.preventDefault();
-        getCovid();
-    });
 });
 
 function getBitcoinRate(){
@@ -82,33 +76,6 @@ function getBitcoinRate(){
                 str += "</ul>";
 
                 $("#bitcoin").html(str);
-            }
-        }
-    );
-}
-
-function getCovid(){
-
-    $.ajax(
-        {
-            method: "POST",
-            contentType: 'application/json',
-            crossDomain: true,
-            dataType: 'json',
-            url:bitCoinUrl, 
-            data: JSON.stringify({
-                "key":$("#codePaysInput").val().toString()
-            }), 
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            success: function(data, textStatus, xhr) {
-                /*optional stuff to do after success */
-                console.log(JSON.stringify(data));
-                $("#covidCas").html(data.nbCas);
-                $("#covidDeces").html(data.nbDeces);
-                $("#covidPays").html("("+data.pays+")");
             }
         }
     );
