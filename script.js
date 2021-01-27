@@ -5,6 +5,7 @@ var quoteUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/g
 var weatherUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getWeather';
 var horoscopeUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getHoroscope';
 var cinemaUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getCinema';
+var covidUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getCovid19';
 
 /*var bitCoinUrl = 'https://395ghwfs0j.execute-api.us-east-1.amazonaws.com/dev/bitcoin';
 var newsUrl = 'https://qzaiescaud.execute-api.us-east-1.amazonaws.com/prod/actus';
@@ -44,6 +45,11 @@ $( document ).ready(function() {
     $("#getCinema").click(function(event) {
         event.preventDefault();
         getCinema();
+    });
+    getCovid();
+    $("#getCovid").click(function(event) {
+        event.preventDefault();
+        getCovid();
     });
 });
 
@@ -242,5 +248,27 @@ function getCinema(){
     .fail(function(err) {
         console.log(err);
     });
+}
+
+function getCovid(){
+
+    $.ajax(
+        {
+            method: "GET",
+            contentType: 'application/json',
+            crossDomain: true,
+            dataType: 'json',
+            url:covidUrl, 
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            success: function(data, textStatus, xhr) {
+                console.log(JSON.stringify(data));
+                $("#covidDate").html(data.date);
+                $("#covidVax").html(data.nbVaccines);
+            }
+        }
+    );
 }
 
