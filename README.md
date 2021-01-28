@@ -5,7 +5,7 @@ Tableau de bord permettant l'affichage des informations suivantes :
 - [Actualités](actualites.md)
  :bomb:
 - [Citation du jour](citation.md) :bomb:
-- Vaccinations contre le CoViD-19 :bomb:
+- [Vaccinations contre le CoViD-19](covid19.md) :bomb:
 - [Ephéméride](ephemeride.md) :bomb::bomb:
 - [Films prochainement diffusés](films.md) :bomb:
 - [Horoscope](horoscope.md) :bomb:
