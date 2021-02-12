@@ -244,7 +244,7 @@ function getCinema(){
         }
     }).done(function(data) {
         var str = '<div class="row">';
-        $.each(data.films, function(index, val) {
+        $.each(data, function(index, val) {
              str += '<div class="card col-sm-6"><div class="card-body"><h5 class="card-title">'+val.titre+'</h5><span class="badge badge-info">'+val.categorie+'</span> <p class="card-text">'+val.description+'</p></div></div>'
         });
         str += "</div";
