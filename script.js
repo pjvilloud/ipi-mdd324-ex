@@ -8,8 +8,8 @@ var cinemaUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/
 var covidUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getcovid19';
 
 ephemerideUrl = 'https://zyy86tqa0k.execute-api.us-east-1.amazonaws.com/prod/ephemeride';
-//newsUrl = 'https://zyyxcv4j67.execute-api.us-east-1.amazonaws.com/prod/actus';
-
+newsUrl = '';
+horoscopeUrl = 'https://0c2ujdebf2.execute-api.us-east-1.amazonaws.com/horoscope';
 weatherUrl = 'https://lgf41gmp4c.execute-api.us-east-1.amazonaws.com/meteo';
 var weatherUrl2 = 'https://ftvd0dvohh.execute-api.us-east-1.amazonaws.com/meteo';
 bitCoinUrl = 'https://9sv0rha6x1.execute-api.us-east-1.amazonaws.com/bitcoin';
