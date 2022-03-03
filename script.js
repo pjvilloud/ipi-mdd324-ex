@@ -8,11 +8,13 @@ var cinemaUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/
 var covidUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getcovid19';
 
 ephemerideUrl = 'https://zyy86tqa0k.execute-api.us-east-1.amazonaws.com/prod/ephemeride';
-weatherUrl = 'https://04p1aseeug.execute-api.us-east-1.amazonaws.com/prod/meteo';
-bitCoinUrl = 'https://6v15jspfzb.execute-api.us-east-1.amazonaws.com/prod2/bitcoin';
-cinemaUrl = 'https://bj17wv5eq3.execute-api.us-east-1.amazonaws.com/prod/films';
-newsUrl = 'https://zyyxcv4j67.execute-api.us-east-1.amazonaws.com/prod/actus';
+//newsUrl = 'https://zyyxcv4j67.execute-api.us-east-1.amazonaws.com/prod/actus';
 
+weatherUrl = 'https://lgf41gmp4c.execute-api.us-east-1.amazonaws.com/meteo';
+var weatherUrl2 = 'https://ftvd0dvohh.execute-api.us-east-1.amazonaws.com/meteo';
+bitCoinUrl = 'https://9sv0rha6x1.execute-api.us-east-1.amazonaws.com/bitcoin';
+cinemaUrl = 'https://jnz0tcaryl.execute-api.us-east-1.amazonaws.com/film';
+quoteUrl = 'https://7ykj046w26.execute-api.us-east-1.amazonaws.com/citation';
 
 /*var bitCoinUrl = 'https://395ghwfs0j.execute-api.us-east-1.amazonaws.com/dev/bitcoin';
 var newsUrl = 'https://qzaiescaud.execute-api.us-east-1.amazonaws.com/prod/actus';
@@ -42,6 +44,11 @@ $( document ).ready(function() {
     $("#getWeather").click(function(event) {
         event.preventDefault();
         getWeather();
+    });
+    getWeather2();
+    $("#getWeather2").click(function(event) {
+        event.preventDefault();
+        getWeather2();
     });
     getEphemeride();
     $("#getHoroscope").click(function(event) {
@@ -202,6 +209,33 @@ function getWeather(){
         str += '<h4 class="text-info text-center">Humidité : ' + data.humidite +'%</h4>';
         str += '<h4 class="text-warning text-center">Soleil : Lever à ' + data.lever +', coucher à ' + data.coucher +'</h4>';
         $("#previsions").html(str);
+    })
+    .fail(function(err) {
+        console.log(err);
+    });
+}
+
+function getWeather2(){
+    $.ajax(
+    {
+        method: "POST",
+        data: JSON.stringify({
+            "city": $("#lieuInput2").val(),
+        }), 
+        contentType: 'application/json',
+        crossDomain: true,
+        dataType: 'json',
+        url:weatherUrl2, 
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }).done(function(data) {
+        var str = '<div class="alert alert-primary" role="alert"><h3>'+data.temps+'&nbsp;<span class="float-right" style="margin-top:-8px"><i class="owf-2x owf owf-'+data.icon+'"></i></h3></div>';
+        str += '<h4 class="text-center">Température : <b>' + data.temp +'°</b></h4>';
+        str += '<h4 class="text-info text-center">Humidité : ' + data.humidite +'%</h4>';
+        str += '<h4 class="text-warning text-center">Soleil : Lever à ' + data.lever +', coucher à ' + data.coucher +'</h4>';
+        $("#previsions2").html(str);
     })
     .fail(function(err) {
         console.log(err);
