@@ -13,7 +13,8 @@ horoscopeUrl = 'https://0c2ujdebf2.execute-api.us-east-1.amazonaws.com/horoscope
 //weatherUrl = 'https://lgf41gmp4c.execute-api.us-east-1.amazonaws.com/meteo';
 weatherUrl = 'https://lgf41gmp4c.execute-api.us-east-1.amazonaws.com/meteo';
 var weatherUrl2 = 'https://ftvd0dvohh.execute-api.us-east-1.amazonaws.com/meteo';
-bitCoinUrl = 'https://9sv0rha6x1.execute-api.us-east-1.amazonaws.com/bitcoin';
+bitCoinUrl = 'https://vixb312alc.execute-api.us-east-1.amazonaws.com/prod/bitcoin';
+var bitcoinUrl2 = 'https://6jlo2ofkff.execute-api.us-east-1.amazonaws.com/prod/bitcoin';
 cinemaUrl = 'https://qlyqjipa58.execute-api.us-east-1.amazonaws.com/prod/films';
 quoteUrl = 'https://7ykj046w26.execute-api.us-east-1.amazonaws.com/citation';
 
@@ -32,6 +33,10 @@ $( document ).ready(function() {
     getBitcoinRate();
     $("#getBitcoinRate").click(function(event) {
         getBitcoinRate();
+    });
+    getBitcoinRate2();
+    $("#getBitcoinRate2").click(function(event) {
+        getBitcoinRate2();
     });
     getNews();
     $("#getNews").click(function(event) {
@@ -98,6 +103,41 @@ function getBitcoinRate(){
                 str += "</ul>";
 
                 $("#bitcoin").html(str);
+            }
+        }
+    );
+}
+
+function getBitcoinRate2(){
+
+    $.ajax(
+        {
+            method: "POST",
+            contentType: 'application/json',
+            crossDomain: true,
+            dataType: 'json',
+            url:bitCoinUrl2, 
+            data: JSON.stringify({
+                "bitcoinAmount": parseFloat($("#btcAmount2").val()),
+                "currencies":$("#currenciesSelect2").val().toString()
+            }), 
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Origin': 'https://pjvilloud.github.io'
+            },
+            success: function(data, textStatus, xhr) {
+                /*optional stuff to do after success */
+                console.log(JSON.stringify(data));
+                var str = "<h2>" + data.bitcoinAmount + " <i class='fa fa-btc'></i> correspond à </h2><ul class='list-group'>";
+
+                $.each( data.currenciesEquivalent, function( cur, amount ) {
+                  str += "<li class='list-group-item'>"+ amount + " <i class='fa fa-" + cur.toLowerCase() +"'></i></li>";
+                });
+
+                str += "</ul>";
+
+                $("#bitcoin2").html(str);
             }
         }
     );
