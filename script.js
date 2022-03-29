@@ -16,7 +16,7 @@ var horoscopeUrl2 = 'https://upl6rd01w0.execute-api.us-east-1.amazonaws.com/prod
 weatherUrl = 'https://lgf41gmp4c.execute-api.us-east-1.amazonaws.com/meteo';
 var weatherUrl2 = 'https://ftvd0dvohh.execute-api.us-east-1.amazonaws.com/meteo';
 bitCoinUrl = 'https://vixb312alc.execute-api.us-east-1.amazonaws.com/prod/bitcoin';
-var bitcoinUrl2 = 'https://6jlo2ofkff.execute-api.us-east-1.amazonaws.com/prod/bitcoin';
+var bitCoinUrl2 = 'https://6jlo2ofkff.execute-api.us-east-1.amazonaws.com/prod/bitcoin';
 cinemaUrl = 'https://qlyqjipa58.execute-api.us-east-1.amazonaws.com/prod/films';
 quoteUrl = 'https://veehvzmy99.execute-api.us-east-1.amazonaws.com/prod/citation';
 
