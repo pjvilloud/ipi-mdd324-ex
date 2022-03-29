@@ -96,8 +96,7 @@ function getBitcoinRate(){
             }), 
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Origin': 'https://pjvilloud.github.io'
+                'Accept': 'application/json'
             },
             success: function(data, textStatus, xhr) {
                 /*optional stuff to do after success */
