@@ -10,7 +10,8 @@ var covidUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/g
 ephemerideUrl = 'https://pqqy2l1u0a.execute-api.us-east-1.amazonaws.com/prod/ephemeride';
 var ephemerideUrl2 = 'https://m2cwno6x7h.execute-api.us-east-1.amazonaws.com/prod/ephemeride';
 newsUrl = '';
-horoscopeUrl = 'https://0c2ujdebf2.execute-api.us-east-1.amazonaws.com/horoscope';
+horoscopeUrl = 'https://7s9og0mdj2.execute-api.us-east-1.amazonaws.com/prod/horoscope';
+var horoscopeUrl2 = 'https://upl6rd01w0.execute-api.us-east-1.amazonaws.com/prod/horoscope';
 //weatherUrl = 'https://lgf41gmp4c.execute-api.us-east-1.amazonaws.com/meteo';
 weatherUrl = 'https://lgf41gmp4c.execute-api.us-east-1.amazonaws.com/meteo';
 var weatherUrl2 = 'https://ftvd0dvohh.execute-api.us-east-1.amazonaws.com/meteo';
@@ -62,6 +63,10 @@ $( document ).ready(function() {
     $("#getHoroscope").click(function(event) {
         event.preventDefault();
         getHoroscope();
+    });
+    $("#getHoroscope2").click(function(event) {
+        event.preventDefault();
+        getHoroscope2();
     });
     
     getCinema();
