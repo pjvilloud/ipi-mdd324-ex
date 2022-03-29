@@ -14,7 +14,7 @@ horoscopeUrl = 'https://0c2ujdebf2.execute-api.us-east-1.amazonaws.com/horoscope
 weatherUrl = 'https://lgf41gmp4c.execute-api.us-east-1.amazonaws.com/meteo';
 var weatherUrl2 = 'https://ftvd0dvohh.execute-api.us-east-1.amazonaws.com/meteo';
 bitCoinUrl = 'https://9sv0rha6x1.execute-api.us-east-1.amazonaws.com/bitcoin';
-cinemaUrl = 'https://euvb2s1db1.execute-api.us-east-1.amazonaws.com/prod/films';
+cinemaUrl = 'https://qlyqjipa58.execute-api.us-east-1.amazonaws.com/prod/films';
 quoteUrl = 'https://7ykj046w26.execute-api.us-east-1.amazonaws.com/citation';
 
 /*var bitCoinUrl = 'https://395ghwfs0j.execute-api.us-east-1.amazonaws.com/dev/bitcoin';
@@ -283,7 +283,7 @@ function getCinema(){
     }).done(function(data) {
         console.log(data);
         var str = '<div class="row">';
-        $.each(data.films, function(index, val) {
+        $.each(data, function(index, val) {
              str += '<div class="card col-sm-6"><div class="card-body"><h5 class="card-title">'+val.titre+'</h5><span class="badge badge-info">'+val.categorie+'</span> <p class="card-text">'+val.description+'</p></div></div>'
         });
         str += "</div";
