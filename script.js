@@ -7,7 +7,8 @@ var horoscopeUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/defau
 var cinemaUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getCinema';
 var covidUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getcovid19';
 
-ephemerideUrl = 'https://zyy86tqa0k.execute-api.us-east-1.amazonaws.com/prod/ephemeride';
+ephemerideUrl = 'https://pqqy2l1u0a.execute-api.us-east-1.amazonaws.com/prod/ephemeride';
+var ephemerideUrl2 = 'https://m2cwno6x7h.execute-api.us-east-1.amazonaws.com/prod/ephemeride';
 newsUrl = '';
 horoscopeUrl = 'https://0c2ujdebf2.execute-api.us-east-1.amazonaws.com/horoscope';
 //weatherUrl = 'https://lgf41gmp4c.execute-api.us-east-1.amazonaws.com/meteo';
@@ -16,7 +17,7 @@ var weatherUrl2 = 'https://ftvd0dvohh.execute-api.us-east-1.amazonaws.com/meteo'
 bitCoinUrl = 'https://vixb312alc.execute-api.us-east-1.amazonaws.com/prod/bitcoin';
 var bitcoinUrl2 = 'https://6jlo2ofkff.execute-api.us-east-1.amazonaws.com/prod/bitcoin';
 cinemaUrl = 'https://qlyqjipa58.execute-api.us-east-1.amazonaws.com/prod/films';
-quoteUrl = 'https://7ykj046w26.execute-api.us-east-1.amazonaws.com/citation';
+quoteUrl = 'https://veehvzmy99.execute-api.us-east-1.amazonaws.com/prod/citation';
 
 /*var bitCoinUrl = 'https://395ghwfs0j.execute-api.us-east-1.amazonaws.com/dev/bitcoin';
 var newsUrl = 'https://qzaiescaud.execute-api.us-east-1.amazonaws.com/prod/actus';
@@ -57,10 +58,12 @@ $( document ).ready(function() {
         getWeather2();
     });
     getEphemeride();
+    getEphemeride2();
     $("#getHoroscope").click(function(event) {
         event.preventDefault();
         getHoroscope();
     });
+    
     getCinema();
     $("#getCinema").click(function(event) {
         event.preventDefault();
@@ -198,6 +201,33 @@ function getEphemeride(){
         str += "<h4>"+data.joursRestants+" jour(s) avant la fin de l'année !</h4>";
 
         $("#ephemeride").html(str);
+    })
+    .fail(function(err) {
+        console.log(err);
+    });
+}
+
+function getEphemeride2(){
+  $.ajax(
+    {
+        method: "GET",
+        contentType: 'application/json',
+        crossDomain: true,
+        dataType: 'json',
+        url:ephemerideUrl2, 
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }).done(function(data) {
+        console.log(JSON.stringify(data));
+        var str = '<div class="alert alert-primary" role="alert"><h3>'+data.dateJour+'</h3></div>';
+        str += '<div class="progress"><div class="progress-bar" role="progressbar" style="width: '+Math.round(data.jourAnnee*100/366)+'%;" aria-valuenow="'+data.jourAnnee+'" aria-valuemin="1" aria-valuemax="365">Jour '+data.jourAnnee+'</div></div>';
+        str += "<h4><em>"+data.feteDuJour+"</em></h4>";
+        str += "<h4>Semaine <span class='badge badge-primary'>"+data.numSemaine+"</span></h4>";
+        str += "<h4>"+data.joursRestants+" jour(s) avant la fin de l'année !</h4>";
+
+        $("#ephemeride2").html(str);
     })
     .fail(function(err) {
         console.log(err);
