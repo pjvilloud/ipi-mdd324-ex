@@ -342,6 +342,29 @@ function getHoroscope(){
     });
 }
 
+function getHoroscope2(){
+    $.ajax(
+    {
+        method: "POST",
+        data: JSON.stringify({
+            "signe": $("#signeSelect2").val(),
+        }), 
+        contentType: 'application/json',
+        crossDomain: true,
+        dataType: 'json',
+        url:horoscopeUrl2, 
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }).done(function(data) {
+        $("#horoscope2").html(data.horoscope);
+    })
+    .fail(function(err) {
+        console.log(err);
+    });
+}
+
 
 function getCinema(){
     $.ajax(
