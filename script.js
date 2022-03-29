@@ -84,7 +84,7 @@ function getBitcoinRate(){
             url:bitCoinUrl, 
             data: JSON.stringify({
                 "bitcoinAmount": parseFloat($("#btcAmount").val()),
-                "currencyList":$("#currenciesSelect").val().toString()
+                "currencies":$("#currenciesSelect").val().toString()
             }), 
             headers: {
                 'Content-Type': 'application/json',
