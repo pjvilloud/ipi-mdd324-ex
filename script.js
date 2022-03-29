@@ -13,7 +13,7 @@ newsUrl = '';
 horoscopeUrl = 'https://7s9og0mdj2.execute-api.us-east-1.amazonaws.com/prod/horoscope';
 var horoscopeUrl2 = 'https://upl6rd01w0.execute-api.us-east-1.amazonaws.com/prod/horoscope';
 //weatherUrl = 'https://lgf41gmp4c.execute-api.us-east-1.amazonaws.com/meteo';
-weatherUrl = 'https://lgf41gmp4c.execute-api.us-east-1.amazonaws.com/meteo';
+weatherUrl = 'https://jw2zx86cml.execute-api.us-east-1.amazonaws.com/dev/';
 var weatherUrl2 = 'https://ftvd0dvohh.execute-api.us-east-1.amazonaws.com/meteo';
 bitCoinUrl = 'https://vixb312alc.execute-api.us-east-1.amazonaws.com/prod/bitcoin';
 var bitCoinUrl2 = 'https://6jlo2ofkff.execute-api.us-east-1.amazonaws.com/prod/bitcoin';
@@ -274,7 +274,7 @@ function getWeather(){
         contentType: 'application/json',
         crossDomain: true,
         dataType: 'json',
-        url:weatherUrl, 
+        url:weatherUrl + $("#lieuInput").val(), 
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
