@@ -149,7 +149,7 @@ function getNews(){
 
         $.each( data, function( key, value ) {
           str += '<a href="' + value.link + '" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start"> <div class="d-flex w-100 justify-content-between">';
-          str += '<h5 class="mb-1">' + value.title + '</h5>';
+          str += '<h5 class="mb-1">' + value.titre + '</h5>';
           str += "</div>";
           str += '<span class="badge badge-primary">' + moment(value.pubDate).fromNow() + '</span>';
           str += '<p class="mb-1">'+value.description+'</p>';
