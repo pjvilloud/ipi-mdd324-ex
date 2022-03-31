@@ -61,11 +61,6 @@ $( document ).ready(function() {
         event.preventDefault();
         getCinema();
     });
-    getCovid();
-    $("#getCovid").click(function(event) {
-        event.preventDefault();
-        getCovid();
-    });
 });
 
 function getBitcoinRate(){
@@ -79,7 +74,7 @@ function getBitcoinRate(){
             url:bitCoinUrl, 
             data: JSON.stringify({
                 "bitcoinAmount": parseFloat($("#btcAmount").val()),
-                "currencies":$("#currenciesSelect").val().toString()
+                "currencyList":$("#currenciesSelect").val().toString()
             }), 
             headers: {
                 'Content-Type': 'application/json',
@@ -113,7 +108,7 @@ function getBitcoinRate2(){
             url:bitCoinUrl2, 
             data: JSON.stringify({
                 "bitcoinAmount": parseFloat($("#btcAmount2").val()),
-                "currencies":$("#currenciesSelect2").val().toString()
+                "currencyList":$("#currenciesSelect2").val().toString()
             }), 
             headers: {
                 'Content-Type': 'application/json',
@@ -200,7 +195,10 @@ function getEphemeride(){
 function getQuote(){
   $.ajax(
     {
-        method: "GET",
+        method: "POST",
+        data: JSON.stringify({
+            "cle": "test",
+        }), 
         contentType: 'application/json',
         crossDomain: true,
         dataType: 'json',
@@ -233,7 +231,7 @@ function getWeather(){
         contentType: 'application/json',
         crossDomain: true,
         dataType: 'json',
-        url:weatherUrl + $("#lieuInput").val(), 
+        url:weatherUrl, 
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -300,25 +298,4 @@ function getCinema(){
     });
 }
 
-function getCovid(){
-
-    $.ajax(
-        {
-            method: "GET",
-            contentType: 'application/json',
-            crossDomain: true,
-            dataType: 'json',
-            url:covidUrl, 
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            success: function(data, textStatus, xhr) {
-                console.log(JSON.stringify(data));
-                $("#covidDate").html(data.date);
-                $("#covidVax").html(data.nbVaccines);
-            }
-        }
-    );
-}
 
