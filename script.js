@@ -210,8 +210,8 @@ function getQuote(){
     }).done(function(data) {
         console.log(JSON.stringify(data));
         var str = '<blockquote class="blockquote">';
-        str += '<p><em>' + data.citation + '</em></p>';
-        str += '<footer>'+data.auteur+'</footer>';
+        str += '<p><em>' + data.quote + '</em></p>';
+        str += '<footer>'+data.author+'</footer>';
         str += '</blockquote>';
 
         $("#citations").html(str);
