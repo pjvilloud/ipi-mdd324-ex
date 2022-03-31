@@ -7,18 +7,15 @@ var horoscopeUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/defau
 var cinemaUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getCinema';
 var covidUrl = 'https://3zw9c5mdo8.execute-api.eu-west-2.amazonaws.com/default/getcovid19';
 
-ephemerideUrl = 'https://pqqy2l1u0a.execute-api.us-east-1.amazonaws.com/prod/ephemeride';
-var ephemerideUrl2 = 'https://m2cwno6x7h.execute-api.us-east-1.amazonaws.com/prod/ephemeride';
-newsUrl = '';
-horoscopeUrl = 'https://7s9og0mdj2.execute-api.us-east-1.amazonaws.com/prod/horoscope';
-var horoscopeUrl2 = 'https://upl6rd01w0.execute-api.us-east-1.amazonaws.com/prod/horoscope';
-//weatherUrl = 'https://lgf41gmp4c.execute-api.us-east-1.amazonaws.com/meteo';
-weatherUrl = 'https://jw2zx86cml.execute-api.us-east-1.amazonaws.com/dev/';
-var weatherUrl2 = 'https://ftvd0dvohh.execute-api.us-east-1.amazonaws.com/meteo';
-bitCoinUrl = 'https://vixb312alc.execute-api.us-east-1.amazonaws.com/prod/bitcoin';
-var bitCoinUrl2 = 'https://6jlo2ofkff.execute-api.us-east-1.amazonaws.com/prod/bitcoin';
-cinemaUrl = 'https://qlyqjipa58.execute-api.us-east-1.amazonaws.com/prod/films';
-quoteUrl = 'https://veehvzmy99.execute-api.us-east-1.amazonaws.com/prod/citation';
+weatherUrl = 'https://b1vyhmmalk.execute-api.us-east-2.amazonaws.com/prod/meteo';
+
+newsUrl = 'https://eva70g18gk.execute-api.us-east-2.amazonaws.com/prod/actus';
+bitCoinUrl = 'https://i63gcfz1q5.execute-api.us-east-2.amazonaws.com/prod/bitcoin';
+var bitCoinUrl2 = 'https://a64hys4qz9.execute-api.us-east-2.amazonaws.com/prod/bitcoin';
+quoteUrl = 'https://f1dqua3n1f.execute-api.us-east-2.amazonaws.com/prod/citation';
+ephemerideUrl = 'https://c4zc4m4wxf.execute-api.us-east-2.amazonaws.com/prod/ephemeride';
+horoscopeUrl = 'https://66dvqxttq2.execute-api.us-east-2.amazonaws.com/prod/horoscope';
+cinemaUrl = 'https://hmmzmoupfi.execute-api.us-east-2.amazonaws.com/prod/films';
 
 /*var bitCoinUrl = 'https://395ghwfs0j.execute-api.us-east-1.amazonaws.com/dev/bitcoin';
 var newsUrl = 'https://qzaiescaud.execute-api.us-east-1.amazonaws.com/prod/actus';
@@ -53,20 +50,10 @@ $( document ).ready(function() {
         event.preventDefault();
         getWeather();
     });
-    getWeather2();
-    $("#getWeather2").click(function(event) {
-        event.preventDefault();
-        getWeather2();
-    });
     getEphemeride();
-    getEphemeride2();
     $("#getHoroscope").click(function(event) {
         event.preventDefault();
         getHoroscope();
-    });
-    $("#getHoroscope2").click(function(event) {
-        event.preventDefault();
-        getHoroscope2();
     });
     
     getCinema();
@@ -210,33 +197,6 @@ function getEphemeride(){
     });
 }
 
-function getEphemeride2(){
-  $.ajax(
-    {
-        method: "GET",
-        contentType: 'application/json',
-        crossDomain: true,
-        dataType: 'json',
-        url:ephemerideUrl2, 
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
-    }).done(function(data) {
-        console.log(JSON.stringify(data));
-        var str = '<div class="alert alert-primary" role="alert"><h3>'+data.dateJour+'</h3></div>';
-        str += '<div class="progress"><div class="progress-bar" role="progressbar" style="width: '+Math.round(data.jourAnnee*100/366)+'%;" aria-valuenow="'+data.jourAnnee+'" aria-valuemin="1" aria-valuemax="365">Jour '+data.jourAnnee+'</div></div>';
-        str += "<h4><em>"+data.feteDuJour+"</em></h4>";
-        str += "<h4>Semaine <span class='badge badge-primary'>"+data.numSemaine+"</span></h4>";
-        str += "<h4>"+data.joursRestants+" jour(s) avant la fin de l'année !</h4>";
-
-        $("#ephemeride2").html(str);
-    })
-    .fail(function(err) {
-        console.log(err);
-    });
-}
-
 function getQuote(){
   $.ajax(
     {
@@ -290,33 +250,6 @@ function getWeather(){
     });
 }
 
-function getWeather2(){
-    $.ajax(
-    {
-        method: "POST",
-        data: JSON.stringify({
-            "city": $("#lieuInput2").val(),
-        }), 
-        contentType: 'application/json',
-        crossDomain: true,
-        dataType: 'json',
-        url:weatherUrl2, 
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
-    }).done(function(data) {
-        var str = '<div class="alert alert-primary" role="alert"><h3>'+data.temps+'&nbsp;<span class="float-right" style="margin-top:-8px"><i class="owf-2x owf owf-'+data.icon+'"></i></h3></div>';
-        str += '<h4 class="text-center">Température : <b>' + data.temp +'°</b></h4>';
-        str += '<h4 class="text-info text-center">Humidité : ' + data.humidite +'%</h4>';
-        str += '<h4 class="text-warning text-center">Soleil : Lever à ' + data.lever +', coucher à ' + data.coucher +'</h4>';
-        $("#previsions2").html(str);
-    })
-    .fail(function(err) {
-        console.log(err);
-    });
-}
-
 function getHoroscope(){
     $.ajax(
     {
@@ -340,29 +273,6 @@ function getHoroscope(){
     });
 }
 
-function getHoroscope2(){
-    $.ajax(
-    {
-        method: "POST",
-        data: JSON.stringify({
-            "signe": $("#signeSelect2").val(),
-        }), 
-        contentType: 'application/json',
-        crossDomain: true,
-        dataType: 'json',
-        url:horoscopeUrl2, 
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
-    }).done(function(data) {
-        $("#horoscope2").html(data.horoscope);
-    })
-    .fail(function(err) {
-        console.log(err);
-    });
-}
-
 
 function getCinema(){
     $.ajax(
@@ -379,7 +289,7 @@ function getCinema(){
     }).done(function(data) {
         console.log(data);
         var str = '<div class="row">';
-        $.each(data, function(index, val) {
+        $.each(data.films, function(index, val) {
              str += '<div class="card col-sm-6"><div class="card-body"><h5 class="card-title">'+val.titre+'</h5><span class="badge badge-info">'+val.categorie+'</span> <p class="card-text">'+val.description+'</p></div></div>'
         });
         str += "</div";
